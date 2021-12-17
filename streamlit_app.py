@@ -5,8 +5,8 @@ if "i" not in st.session_state:
 
 
 def on_click():
-    twenty_million = 320 * 1_000_000
-    st.session_state[st.session_state.i] = "A" + (twenty_million * "H")
+    one_hundred_megabytes = 100 * 1_000_000
+    st.session_state[st.session_state.i] = "A" + (one_hundred_megabytes * "H")
     st.session_state.i += 1
 
 
@@ -14,13 +14,3 @@ approximate_memory_usage = len(str(st.session_state)) / 1e6
 st.write(f"memory used by session state ~{approximate_memory_usage}MB")
 
 st.button("use more memory!", on_click=on_click)
-
-iterations = st.empty()
-
-i = 0
-product = 1
-
-while True:
-    product *= i
-    iterations.write(i)
-    i += 1
