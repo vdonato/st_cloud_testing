@@ -1,5 +1,7 @@
 import streamlit as st
 
+st.set_page_config(page_title="my app wow")
+
 st.header("Main page content")
 
 st.write(f"logger.level: `{st.get_option('logger.level')}`")
