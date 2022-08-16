@@ -1,8 +1,13 @@
 import streamlit as st
+from wand.image import Image
 
-st.set_page_config(page_title="my app wow")
+f = st.file_uploader("upload an image")
+if f:
+    image_bytes = f.read()
+    img = Image(blob=image_bytes)
 
-st.header("Main page content")
+    flipped = img.clone()
+    flipped.rotate(180)
+    flipped.save(filename="./flipped.jpg")
 
-st.write(f"logger.level: `{st.get_option('logger.level')}`")
-st.write(f"server.baseUrlPath: `{st.get_option('server.baseUrlPath')}`")
+    st.image("./flipped.jpg")
