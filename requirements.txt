@@ -1,2 +1,3 @@
 magickwand
+pdfplumber
 wand

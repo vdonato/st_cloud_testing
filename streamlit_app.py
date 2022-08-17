@@ -1,13 +1,10 @@
+import pdfplumber
 import streamlit as st
-from wand.image import Image
 
-f = st.file_uploader("upload an image")
-if f:
-    image_bytes = f.read()
-    img = Image(blob=image_bytes)
+with pdfplumber.open(
+    "https://raw.githubusercontent.com/jsvine/pdfplumber/stable/examples/pdfs/background-checks.pdf"
+) as pdf:
+    img = pdf.pages[0].to_image(resolution=150)
+    img.save("./as_image.png", format="PNG")
 
-    flipped = img.clone()
-    flipped.rotate(180)
-    flipped.save(filename="./flipped.jpg")
-
-    st.image("./flipped.jpg")
+    st.image("./as_image.png")
