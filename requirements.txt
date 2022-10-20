@@ -1,4 +1,4 @@
-./streamlit-1.13.4-py2.py3-none-any.whl
+./streamlit-1.13.5-py2.py3-none-any.whl
 magickwand
 pdfplumber
 wand
