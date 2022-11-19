@@ -1,4 +1,0 @@
-./streamlit-1.13.6-py2.py3-none-any.whl
-magickwand
-pdfplumber
-wand
