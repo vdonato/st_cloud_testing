@@ -5,6 +5,13 @@ st.title(
     "Streamlit gets stuck if session disconnects while waiting for HTTP response, and then tries to reconnect"
 )
 
+st.markdown(
+    """
+<a href="/page2#test" target="_self">page2</a>
+""",
+    unsafe_allow_html=True,
+)
+
 # Button that does something else
 if st.button("Another button"):
     st.balloons()
