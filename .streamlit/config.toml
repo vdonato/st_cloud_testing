@@ -1,0 +1,4 @@
+[connections.sql]
+dialect = "postgres"
+username = "postgres"
+host = "localhost"
